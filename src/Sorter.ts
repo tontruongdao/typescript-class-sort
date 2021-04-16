@@ -1,7 +1,13 @@
 import { NumCollection } from './NumCollection'
 
+interface Sortable {
+    length: number;
+    compare(leftIdx: number, rightIdx: number): boolean;
+    swap(leftIdx: number, rightIdx: number): void;
+}
+
 export class Sorter {
-    constructor(public collection: NumCollection ) {
+    constructor(public collection: Sortable ) {
     }
 
     sort(): void {
